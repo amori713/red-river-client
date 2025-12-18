@@ -1,0 +1,94 @@
+/* ========== Input Fields & Form Controls */
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    color: #495057;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(38,143,255,.25);
+  }
+  
+  textarea.form-control {
+    font-size: 0.95rem;
+  }
+  
+  /* ========== Table - Styling */
+  .table {
+    background-color: #343a40;
+    color: #f8f9fa;
+  }
+  
+  .table th, .table td {
+    padding: 15px;
+    vertical-align: middle;
+    border: 1px solid #4e555b;
+  }
+  
+  .table th {
+    background-color: #23272b;
+  }
+  
+  /* ========== Button Styling */
+  .btn {
+    border-radius: 8px;
+    padding: 6px 12px;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border: none;
+  }
+  
+  .btn-sm {
+    padding: 5px 10px;
+  }
+  
+  /* ========== Alerts ========== */
+  .alert {
+    border-radius: 8px;
+    font-size: 0.875rem;
+    padding: 10px;
+  }
+  
+  .alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  /* ========== Container Padding ========== */
+  .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  /* ========== Fading effect ========== */
+  .fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

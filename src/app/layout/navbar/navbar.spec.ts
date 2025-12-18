@@ -1,22 +1,23 @@
 import { Component } from '@angular/core';
-import { RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { AuthService } from './services/auth.service';
+import { Router, RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-navbar',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './app.html',
-  styleUrls: ['./app.scss']
+  templateUrl: './navbar.html',
+  styleUrls: ['./navbar.scss']
 })
-export class AppComponent {
+export class Navbar {
   isDark = false;
 
   constructor(public auth: AuthService, private router: Router) {}
 
   toggleTheme() {
     this.isDark = !this.isDark;
+    document.body.classList.toggle('theme-dark', this.isDark);
   }
 
   logout() {

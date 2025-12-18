@@ -1,0 +1,65 @@
+<div class="container py-4">
+  <h2 class="mb-3">
+    <i class="fa-solid fa-quote-left me-2"></i>Mina citat
+  </h2>
+
+  <!-- Visar max citat -->
+  <div class="alert alert-info">
+    Visar max 5 citat (krav).
+  </div>
+
+  <!-- Form Panel -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5>Lägg till citat</h5>
+
+      <!-- Error message -->
+      <div *ngIf="error" class="alert alert-danger">
+        <i class="fa-solid fa-triangle-exclamation me-2"></i> {{ error }}
+      </div>
+
+      <textarea
+        class="form-control mb-2"
+        rows="2"
+        placeholder="Skriv citatet här..."
+        [(ngModel)]="form.text">
+      </textarea>
+
+      <input
+        class="form-control mb-2"
+        placeholder="Författare (valfritt)"
+        [(ngModel)]="form.author">
+
+      <button class="btn btn-success" (click)="save()">
+        <i class="fa-solid fa-floppy-disk me-1"></i>Spara
+      </button>
+    </div>
+  </div>
+
+  <!-- Citat Table -->
+  <table class="table table-striped" *ngIf="quotes.length > 0">
+    <thead>
+      <tr>
+        <th>Citat</th>
+        <th>Författare</th>
+        <th style="width: 120px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let q of quotes">
+        <td>{{ q.text }}</td>
+        <td>{{ q.author }}</td>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)="remove(q.id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Empty message if no quotes -->
+  <div *ngIf="quotes.length === 0" class="text-muted text-center mt-4">
+    Inga citat ännu
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <h3 class="mb-3 text-center">Registrera</h3>
+  
+          <div *ngIf="error" class="alert alert-danger py-2">{{ error }}</div>
+          <div *ngIf="ok" class="alert alert-success py-2">{{ ok }}</div>
+  
+          <form (ngSubmit)="submit()">
+            <div class="mb-3">
+              <label class="form-label">Användarnamn</label>
+              <input class="form-control" [(ngModel)]="userName" name="userName" required />
+            </div>
+  
+            <div class="mb-3">
+              <label class="form-label">Lösenord</label>
+              <input type="password" class="form-control" [(ngModel)]="password" name="password" required />
+            </div>
+  
+            <button class="btn btn-success w-100">
+              <i class="fa-solid fa-user-plus me-2"></i>Skapa konto
+            </button>
+          </form>
+  
+          <div class="text-center mt-3">
+            <a routerLink="/login">Till login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
